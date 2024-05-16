@@ -1,0 +1,49 @@
+import React from "react";
+
+const Contact = () => {
+  return (
+    <section>
+      <div className="px-4 mx-auto max-w-screen-md">
+        <h2 className="heading text-center">Contact Us</h2>
+        <p className="mb-8 lg:mb-16 font-light text-center text__para">
+          Got a technical issue? want to send feedback about a beta feature?
+        </p>
+        <form action="#">
+          <div>
+            <label htmlFor="email">Your Email</label>
+            <input
+              type="email"
+              placeholder="example@gamil.com"
+              className="form__input mt-1"
+              id="email"
+            />
+          </div>
+          <div>
+            <label htmlFor="subject">Subject</label>
+            <input
+              type="text"
+              placeholder="Let us know how we can help you"
+              className="form__input mt-1"
+              id="subject"
+            />
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="message">Your Message</label>
+            <textarea
+              rows="6"
+              type="text"
+              placeholder="Leave A comment..."
+              className="form__input mt-1"
+              id="message"
+            />
+          </div>
+          <button type="submit" className="btn rounded sm:w-fit">
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;

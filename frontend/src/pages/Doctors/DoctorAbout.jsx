@@ -1,0 +1,68 @@
+import { formateDate } from "./../../utils/formateDate";
+
+const DoctorAbout = ({ name, about, experiences, qualifications }) => {
+  console.log();
+  return (
+    <div>
+      <div className="">
+        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold  flex items-center gap-2">
+          About of{" "}
+          <span className=" text-irisBlueCOlor font-bold text-[24px] leading-9 ">
+            {name}
+          </span>
+        </h3>
+        <p className="text__para">{about}</p>
+      </div>
+      <div className="mt-12">
+        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold ">
+          Education
+        </h3>
+        <ul className="pt-4 md:p-5">
+          {qualifications?.map((item, index) => (
+            <li
+              key={index}
+              className="flex flex-col sm:flex-row   sm:justify-between sm:items-end md:gap-5 mb-[30px]"
+            >
+              <div>
+                <span className=" text-irisBlueCOlor  text-[15px] leading-6 font-semibold  ">
+                  {formateDate(item.startingDate)}-{" "}
+                  {formateDate(item.endingDate)}
+                </span>
+
+                <p className="font-medium text-textColor text-base leading-6 ">
+                  {item.degree}
+                </p>
+              </div>
+
+              <p className="font-[14px] text-textColor text-base leading- ">
+                {item.university}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="mt-12">
+        <h3 className="text-[20px] leading-[30px] text-headingColor font-semibold ">
+          Experince
+        </h3>
+        <ul className="grid sm:grid-cols-2 gap-[30px] pt-4 md:p-5">
+          {experiences?.map((item, index) => (
+            <li key={index} className="p-4 rounded bg-[#fff9ea]">
+              <span className="text-yellowColor text-[15px] leading-6 font-semibold">
+                {formateDate(item.startingDate)}- {formateDate(item.endingDate)}
+              </span>
+              <p className="font-medium text-textColor text-base leading-6 ">
+                {item.postiton}
+              </p>
+              <p className="font-[14px] text-textColor text-base leading- ">
+                {item.hospital}
+              </p>
+            </li>
+          ))}{" "}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default DoctorAbout;
