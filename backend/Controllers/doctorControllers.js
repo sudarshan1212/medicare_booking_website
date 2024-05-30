@@ -20,6 +20,7 @@ export const updateDoctor = async (req, res) => {
       .json({ Status: "INVALID", message: "Error in updateDoctor" });
   }
 };
+
 export const deleteDoctor = async (req, res) => {
   const id = req.params.id;
   try {
